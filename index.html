@@ -4,18 +4,33 @@
     <head>
         <meta charset="UTF-8">
         <title>LGGG Lots</title>
+        <style>
+            .header { 
+                display: table; 
+                margin-left: auto; 
+                margin-right: auto; 
+            } 
+            .btm_image {
+                    width: auto; height: auto;
+                    max-width: 30px;
+                    max-height: 30px;
+                }
+            .max-small {
+                width: auto; height: auto;
+                max-width: 300px;
+                max-height: 300px;
+            }
+          </style>
     </head>
 
     <body>
-        <style> 
-            .header { display: table; margin-left: auto; margin-right: auto; } 
-        </style>
 
         <div class="header">
-            <h1>1500팔 이벤트</h1>
-
+            
+            <h1><div id="result"></div></h1>
+            <button type="button" style="WIDTH: 100pt; HEIGHT: 100pt; border:0; outline: 0; background-color:white"><img style="WIDTH: 100pt; HEIGHT: 100pt" src="./images/edit_btn.PNG" alt=""></button>
+            <button type="button" style="WIDTH: 110pt; HEIGHT: 100pt; border:0; outline: 0; background-color:white"><img style="WIDTH: 100pt; HEIGHT: 100pt" src="./images/close_btn.PNG" alt=""></button>
             <input id="event_title" onchange="printName()" placeholder="이벤트 제목을 입력하세요." />
-            <div id="result"></div>
 
             <script type ="text/javascript">
                 function printName()  {
@@ -27,16 +42,8 @@
         
         </div>
         <div class = "word-display">
-            Hello!
+            
         </div>
-
-        <style>
-            .max-small {
-                width: auto; height: auto;
-                max-width: 300px;
-                max-height: 300px;
-            }
-        </style>
         
         <img class='max-small' src="./images/IMG1.PNG" alt="img1">
         <img class='max-small' src="./images/IMG2.PNG" alt="img2">
