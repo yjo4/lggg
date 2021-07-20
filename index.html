@@ -7,8 +7,24 @@
     </head>
 
     <body>
+        <style> 
+            .header { display: table; margin-left: auto; margin-right: auto; } 
+        </style>
+
         <div class="header">
             <h1>1500팔 이벤트</h1>
+
+            <input id="event_title" onchange="printName()" placeholder="이벤트 제목을 입력하세요." />
+            <div id="result"></div>
+
+            <script type ="text/javascript">
+                function printName()  {
+                const name = document.getElementById('event_title').value;
+                document.getElementById("result").innerText = name;
+                }
+            </script>
+
+        
         </div>
         <div class = "word-display">
             Hello!
