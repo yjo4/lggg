@@ -34,6 +34,12 @@
             background-color: white;
             border: none;
         }
+
+        .container{
+            display: grid;
+            height: 5%;
+            padding-top: 100px;
+        }
     </style>
 </head>
 
@@ -99,13 +105,6 @@
     </script>
 
     <!--직접 이벤트 제목 입력 받기-->
-    <style>
-        .container{
-            display: grid;
-            grid-template-columns: 50% 50%;
-            padding-top: 100px;
-        }
-    </style>
 
     <input id="event_title" onchange="printName()" style="float: right; visibility: visible;"
         placeholder="이벤트 제목을 입력하세요."
@@ -130,23 +129,47 @@
 
     <div class="container">
         <div>
-            <button id="lgggLots1" type="button" value="toggleDiv1(); toggleDiv2();" onclick="toggleDiv3(); toggleDiv4();"
-            style="float:left; width: 300pt; HEIGHT: 300pt; border:0; outline: 0; background-color:white; display: none"><img
+            <button class="button" id="lgggLots1" type="button" value="toggleDiv1(); toggleDiv2();" onclick="toggleDiv3(); toggleDiv4();"
+            style="width: 300pt; HEIGHT: 300pt; border:0; outline: 0; background-color:white; display: none"><img
                 style="WIDTH: 300pt; HEIGHT: 300pt" src="./images/IMG4.GIF" alt=""></button>
         <button id="lgggLots2" type="button" value="toggleDiv1(); toggleDiv2();" onclick="toggleDiv3(); toggleDiv4();"
-            style="float:left; width: 300pt; HEIGHT: 300pt; border:0; outline: 0; background-color:white; display: inline;"><img
+            style="width: 300pt; HEIGHT: 300pt; border:0; outline: 0; background-color:white; display: inline;"><img
                 style="WIDTH: 300pt; HEIGHT: 300pt" src="./images/IMG3.PNG" alt=""></button>    
         </div>
-        <div>
-            <div class="word-display"
-            style="float: left; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
-            참가자 목록:</div>
-            <form>
-                <textarea name="list" wrap="virtual" placeholder="참가자 아이디를 입력하세요. (엔터로 구분)" cols="30" rows="20"
-                    style="float:left"></textarea>
-            </form>
-        </div>
+ 
     </div>
+
+    <input type="text" id="inputBox" size="30">
+    <input type="submit" value="배열에 추가하기" onclick="insert()"><br>
+    현재 배열의 값:<span id="ArrayData"></span><br>
+
+    <p class="input"></p>
+
+    <script>
+
+        var luck= new Array();
+        function insert()
+        {
+            var data = document.getElementById("inputBox");
+            
+            luck.push(data.value);
+            
+            ArrayData.innerHTML = luck;
+            
+            inputBox.value = "";
+        }
+
+        var input = document.querySelector(".input");
+        var btn = document.querySelector(".button");
+
+        btn.addEventListener("click", action);
+
+        function action(){
+        input.textContent = luck[Math.floor(Math.random()*luck.length)];
+
+        }
+    </script>
+
 </body>
 
 </html>
