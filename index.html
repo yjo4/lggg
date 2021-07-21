@@ -1,129 +1,152 @@
 <!DOCTYPE html>
 <html lang="ko">
 
-    <head>
-        <meta charset="UTF-8">
-        <title>LGGG Lots</title>
-        <style>
-            .header { 
-                display: table; 
-                margin-left: auto; 
-                margin-right: auto; 
-            } 
-            .btm_image {
-                    width: auto; height: auto;
-                    max-width: 30px;
-                    max-height: 30px;
-                }
-            .max-small {
-                width: auto; height: auto;
-                max-width: 300px;
-                max-height: 300px;
-            }
-            .event_title {
-                width: auto;
-                height: auto;
-                background-color: white;
-                border: none;
-            }
-          </style>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <title>LGGG Lots</title>
+    <style>
+        .header {
+            position: absolute;
+            width: 75%;
+            text-align: right;
+            margin-top:1rem; 
+            font-size: 45px; 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
 
-    <body>
+        .btm_image {
+            width: auto;
+            height: auto;
+            max-width: 30px;
+            max-height: 30px;
+        }
 
-        <script type ="text/javascript">
-            
-            function toggleDiv1(){
-                const div=document.getElementById('ShutUpChris1');
-            
-                if(div.style.display=='none'){
-                    div.style.display='inline';
-                }else{
-                    div.style.display='none';
-                }
+        .max-small {
+            width: auto;
+            height: auto;
+            max-width: 300px;
+            max-height: 300px;
+        }
+
+        .event_title {
+            width: auto;
+            height: auto;
+            background-color: white;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+
+        function toggleDiv1() {
+            const div = document.getElementById('ShutUpChris1');
+
+            if (div.style.display == 'none') {
+                div.style.display = 'inline';
+            } else {
+                div.style.display = 'none';
             }
+        }
 
-            function toggleDiv2(){
-                const div=document.getElementById('ShutUpChris2');
-            
-                if(div.style.display=='none'){
-                    div.style.display='inline';
-                }else{
-                    div.style.display='none';
-                }
+        function toggleDiv2() {
+            const div = document.getElementById('ShutUpChris2');
+
+            if (div.style.display == 'none') {
+                div.style.display = 'inline';
+            } else {
+                div.style.display = 'none';
             }
+        }
 
-            function toggleDiv3(){
-                const div=document.getElementById('lgggLots1');
-            
-                if(div.style.display=='none'){
-                    div.style.display='inline';
-                }else{
-                    div.style.display='none';
-                }
+        function toggleDiv3() {
+            const div = document.getElementById('lgggLots1');
+
+            if (div.style.display == 'none') {
+                div.style.display = 'inline';
+            } else {
+                div.style.display = 'none';
             }
+        }
 
-            function toggleDiv4(){
-                const div=document.getElementById('lgggLots2');
-            
-                if(div.style.display=='none'){
-                    div.style.display='inline';
-                }else{
-                    div.style.display='none';
-                }
+        function toggleDiv4() {
+            const div = document.getElementById('lgggLots2');
+
+            if (div.style.display == 'none') {
+                div.style.display = 'inline';
+            } else {
+                div.style.display = 'none';
             }
+        }
 
-            function printName()  {
-                const name = document.getElementById('event_title').value;
-                document.getElementById("result").innerText = name;
+        function printName() {
+            const name = document.getElementById('event_title').value;
+            document.getElementById("result").innerText = name;
+        }
+
+        function eventTitleInput() {
+            const div = document.getElementById('event_title');
+
+            if (div.style.visibility == 'visible') {
+                div.style.visibility = 'hidden';
+            } else {
+                div.style.visibility = 'visible';
             }
-            
-            function eventTitleInput() {
-                const div=document.getElementById('event_title');
-                
-                if(div.style.visibility == 'visible'){
-                    div.style.visibility = 'hidden';
-                }else{
-                    div.style.visibility = 'visible';
-                }
-            }
+        }
 
-        </script>
-        <!--직접 이벤트 제목 입력 받기-->
-        <input id="event_title" onchange="printName()" style="float: right; visibility: visible;" placeholder="이벤트 제목을 입력하세요." onKeypress="javascript:if(event.keyCode==13) {eventTitleInput(); toggleDiv1(); toggleDiv2();}">
+    </script>
 
-        <div class="title_show_Btn">
-            <button id="ShutUpChris1" type="button" value="toggleDiv1(); toggleDiv2();" onclick="eventTitleInput(); toggleDiv1(); toggleDiv2();" style="float: right; WIDTH: 100pt; HEIGHT: 100pt; border:0; outline: 0; background-color:white; display: none;"><img style="WIDTH: 100pt; HEIGHT: 100pt" src="./images/edit_btn.PNG" alt=""></button>
+    <!--직접 이벤트 제목 입력 받기-->
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: 50% 50%;
+            padding-top: 100px;
+        }
+    </style>
+
+    <input id="event_title" onchange="printName()" style="float: right; visibility: visible;"
+        placeholder="이벤트 제목을 입력하세요."
+        onKeypress="javascript:if(event.keyCode==13) {eventTitleInput(); toggleDiv1(); toggleDiv2();}">
+
+    <div class="title_show_Btn">
+        <button id="ShutUpChris1" type="button" value="toggleDiv1(); toggleDiv2();"
+            onclick="eventTitleInput(); toggleDiv1(); toggleDiv2();"
+            style="float: right; WIDTH: 100pt; HEIGHT: 100pt; border:0; outline: 0; background-color:white; display: none;"><img
+                style="WIDTH: 100pt; HEIGHT: 100pt" src="./images/edit_btn.PNG" alt=""></button>
+    </div>
+    <div class="title_hide_Btn">
+        <button id="ShutUpChris2" type="button" value="toggleDiv1(); toggleDiv2();"
+            onclick="eventTitleInput(); toggleDiv1(); toggleDiv2();"
+            style="float: right; WIDTH: 110pt; HEIGHT: 100pt; border:0; outline: 0; background-color:white; display: inline;"><img
+                style="WIDTH: 100pt; HEIGHT: 100pt" src="./images/close_btn.PNG" alt=""></button>
+    </div>
+
+    <div class="header" id="result"></div>
+
+    <!--기린뽑기-->
+
+    <div class="container">
+        <div>
+            <button id="lgggLots1" type="button" value="toggleDiv1(); toggleDiv2();" onclick="toggleDiv3(); toggleDiv4();"
+            style="float:left; width: 300pt; HEIGHT: 300pt; border:0; outline: 0; background-color:white; display: none"><img
+                style="WIDTH: 300pt; HEIGHT: 300pt" src="./images/IMG4.GIF" alt=""></button>
+        <button id="lgggLots2" type="button" value="toggleDiv1(); toggleDiv2();" onclick="toggleDiv3(); toggleDiv4();"
+            style="float:left; width: 300pt; HEIGHT: 300pt; border:0; outline: 0; background-color:white; display: inline;"><img
+                style="WIDTH: 300pt; HEIGHT: 300pt" src="./images/IMG3.PNG" alt=""></button>    
         </div>
-        <div class="title_hide_Btn">
-            <button id="ShutUpChris2" type="button" value="toggleDiv1(); toggleDiv2();" onclick="eventTitleInput(); toggleDiv1(); toggleDiv2();" style="float: right; WIDTH: 110pt; HEIGHT: 100pt; border:0; outline: 0; background-color:white; display: inline;"><img style="WIDTH: 100pt; HEIGHT: 100pt" src="./images/close_btn.PNG" alt=""></button>
+        <div>
+            <div class="word-display"
+            style="float: left; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+            참가자 목록:</div>
+            <form>
+                <textarea name="list" wrap="virtual" placeholder="참가자 아이디를 입력하세요. (엔터로 구분)" cols="30" rows="20"
+                    style="float:left"></textarea>
+            </form>
         </div>
-
-        <div class="header" id="result" style="display:flex; float: right; font-size: 45px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"></div>
-
-        <!--기린뽑기-->
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        
-        <br/>
-        <br/>
-        <br/>
-
-        <br/>
-        <br/>
-        <br/>
-        <form>
-            <textarea name="list" wrap="virtual" placeholder="참가자 아이디를 입력해 주세요. (엔터로 구분)" cols="30" rows="20" style="float:right"></textarea>
-        </form>
-
-        <div class = "word-display" style="float: right; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">참가자 목록:</div>
-
-        <button id="lgggLots1" type="button" value="toggleDiv1(); toggleDiv2();" onclick="toggleDiv3(); toggleDiv4();" style="float:right; width: 300pt; HEIGHT: 300pt; border:0; outline: 0; background-color:white; display: none"><img style="WIDTH: 300pt; HEIGHT: 300pt" src="./images/IMG4.GIF" alt=""></button>
-        <button id="lgggLots2" type="button" value="toggleDiv1(); toggleDiv2();" onclick="toggleDiv3(); toggleDiv4();" style="float:right; width: 300pt; HEIGHT: 300pt; border:0; outline: 0; background-color:white; display: inline;"><img style="WIDTH: 300pt; HEIGHT: 300pt" src="./images/IMG3.PNG" alt=""></button>
-
-        
-    </body>
+    </div>
+</body>
 
 </html>
