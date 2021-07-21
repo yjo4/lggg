@@ -32,28 +32,53 @@
     <body>
 
         <script type ="text/javascript">
-            function printName()  {
-            const name = document.getElementById('event_title').value;
-            document.getElementById("result").innerText = name;
+            
+            function toggleDiv1(){
+                const div=document.getElementById('ShutUpChris1');
+            
+                if(div.style.display=='none'){
+                    div.style.display='inline';
+                }else{
+                    div.style.display='none';
+                }
             }
+
+            function toggleDiv2(){
+                const div=document.getElementById('ShutUpChris2');
+            
+                if(div.style.display=='none'){
+                    div.style.display='inline';
+                }else{
+                    div.style.display='none';
+                }
+            }
+
+            function printName()  {
+                const name = document.getElementById('event_title').value;
+                document.getElementById("result").innerText = name;
+            }
+            
             //보이기
             function div_show() {
-            document.getElementById("event_title").style.display = "block";
+                document.getElementById("event_title").style.display = "inline";
             }
             
             //숨기기
             function div_hide() {
-            document.getElementById("event_title").style.display = "none";
+                document.getElementById("event_title").style.display = "none";
             }
+
         </script>
 
-        <div class="header">
-            <div id="result" style="font-size: 45px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"></div>
-            <button id="Chris" type="button" onclick="div_show();" style="WIDTH: 100pt; HEIGHT: 100pt; border:0; outline: 0; background-color:white"><img style="WIDTH: 100pt; HEIGHT: 100pt" src="./images/edit_btn.PNG" alt=""></button>
-            <button id="Shut_up" type="button" onclick="div_hide();" style="WIDTH: 110pt; HEIGHT: 100pt; border:0; outline: 0; background-color:white"><img style="WIDTH: 100pt; HEIGHT: 100pt" src="./images/close_btn.PNG" alt=""></button>
-            
-            <input id="event_title" onchange="printName()" placeholder="이벤트 제목을 입력하세요." />
+        <div class="header" id="result" style="float: center; font-size: 45px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"></div>
         
+        <input id="event_title" onchange="printName()" style="float: right;" placeholder="이벤트 제목을 입력하세요." onKeypress="javascript:if(event.keyCode==13) {div_hide(); toggleDiv1(); toggleDiv2();}">
+
+        <div class="title_show_Btn">
+            <button id="ShutUpChris1" type="button" value="toggleDiv1(); toggleDiv2();" onclick="div_show(); toggleDiv1(); toggleDiv2();" style="float: right; WIDTH: 100pt; HEIGHT: 100pt; border:0; outline: 0; background-color:white; display: none"><img style="WIDTH: 100pt; HEIGHT: 100pt" src="./images/edit_btn.PNG" alt=""></button>
+        </div>
+        <div class="title_hide_Btn">
+            <button id="ShutUpChris2" type="button" value="toggleDiv1(); toggleDiv2();" onclick="div_hide(); toggleDiv1(); toggleDiv2();" style="float: right; WIDTH: 110pt; HEIGHT: 100pt; border:0; outline: 0; background-color:white; display: inline;"><img style="WIDTH: 100pt; HEIGHT: 100pt" src="./images/close_btn.PNG" alt=""></button>
         </div>
 
         <button type="button" style="WIDTH: 300pt; HEIGHT: 300pt; border:0; outline: 0; background-color:white"><img style="WIDTH: 300pt; HEIGHT: 300pt" src="./images/IMG4.GIF" alt=""></button>
