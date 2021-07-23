@@ -152,12 +152,17 @@
         function insert()
         {
             var data = document.getElementById("inputBox");
-            
+           
             luck.push(data.value);
-            
+
+            luck = luck.filter(function(item) {
+                return item !== null && item !== undefined && item !== '' && item !== ' ' && item !== '  ' && item !== '   ' && item !== '    ';
+            });
+    
             ArrayData.innerHTML = luck;
             
             inputBox.value = "";
+            
         }
 
         var input = document.querySelector(".input");
